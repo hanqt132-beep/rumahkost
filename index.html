@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kost AE Ketapang | Kost Premium Modern</title>
+<meta name="description" content="Kost Premium Ketapang AC, WiFi cepat, kamar mandi dalam, keamanan 24 jam. Booking via WhatsApp & QRIS.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--primary:#4f46e5;
+--accent:#22c55e;
+--dark:#020617;
+--gray:#64748b;
+--bg:#f8fafc;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b;transition:0.3s;}
+body.dark{background:#020617;color:#e5e7eb;}
+body.dark nav, body.dark .card, body.dark form, body.dark footer{background:#111827;color:#e5e7eb;}
+
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:1000;height:70px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;transition:.3s;}
+nav.scrolled{box-shadow:0 20px 40px rgba(0,0,0,.2);}
+.navbar a{margin-left:25px;color:#334155;font-weight:500;text-decoration:none;}
+
+.hero{margin-top:70px;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;}
+.hero-content{max-width:1200px;margin:auto;padding:120px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+.hero h1{font-size:3.2rem;}
+.hero p{margin:20px 0;}
+.hero img{width:100%;border-radius:30px;box-shadow:0 40px 80px rgba(0,0,0,.4);}
+
+.btn{display:inline-block;padding:16px 32px;border-radius:20px;font-weight:600;transition:.3s;cursor:pointer;text-align:center;}
+.btn-main{background:white;color:var(--primary);}
+.btn-main:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(0,0,0,.4);}
+
+.section{padding:100px 20px;max-width:1200px;margin:auto;}
+.section h2{text-align:center;font-size:2.4rem;margin-bottom:10px;}
+.section p.desc{text-align:center;max-width:650px;margin:0 auto 60px;color:var(--gray);}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.card{background:white;padding:34px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.1);transition:.35s;position:relative;cursor:pointer;}
+.card:hover{transform:translateY(-10px);box-shadow:0 40px 80px rgba(0,0,0,.18);}
+.card i{font-size:2.3rem;color:var(--accent);margin-bottom:15px;}
+
+.badge{position:absolute;top:20px;right:20px;background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:.8rem;}
+
+.slider{overflow:hidden;border-radius:28px;}
+.slider-track{display:flex;transition:0.5s;}
+.slider img{min-width:100%;height:260px;object-fit:cover;}
+
+form{max-width:480px;margin:auto;background:white;padding:40px;border-radius:30px;box-shadow:0 30px 70px rgba(0,0,0,.15);}
+input,select,button{width:100%;padding:15px;margin-bottom:16px;border-radius:14px;border:1px solid #cbd5e1;font-family:inherit;}
+button{border:none;}
+
+.faq p{display:none;margin-top:10px;}
+.faq.open p{display:block;}
+
+footer{background:#020617;color:#94a3b8;text-align:center;padding:50px 20px;}
+
+.wa-float,.dark-toggle,.top-toggle{position:fixed;right:30px;border-radius:50%;color:white;font-size:1.6rem;z-index:999;box-shadow:0 20px 50px rgba(0,0,0,.4);padding:18px;cursor:pointer;}
+.wa-float{bottom:30px;background:#25D366;}
+.dark-toggle{bottom:100px;background:#0f172a;}
+.top-toggle{bottom:170px;background:var(--primary);}
+
+#qrisContainer{max-width:300px;margin:20px auto;text-align:center;}
+
+.reveal{opacity:0;transform:translateY(40px);transition:1s;}
+.reveal.active{opacity:1;transform:none;}
+
+@media(max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center}.hero h1{font-size:2.3rem;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+<div class="navbar">
+<div class="logo"><i class="fas fa-building"></i> Kost AE</div>
+<div>
+<a href="#fasilitas">Fasilitas</a>
+<a href="#kamar">Kamar</a>
+<a href="#galeri">Galeri</a>
+<a href="#booking">Booking</a>
+</div>
+</div>
+</nav>
+
+<section class="hero reveal">
+<div class="hero-content">
+<div>
+<h1>Kost Premium Ketapang</h1>
+<p>Hunian modern, nyaman, dan aman untuk mahasiswa & pekerja.</p>
+<a href="#booking" class="btn btn-main"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
+</div>
+<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg" alt="Kost AE">
+</div>
+</section>
+
+<section id="fasilitas" class="section reveal">
+<h2>Fasilitas Unggulan</h2>
+<div class="grid">
+<div class="card"><i class="fas fa-snowflake"></i><h3>AC</h3></div>
+<div class="card"><i class="fas fa-wifi"></i><h3>WiFi Cepat</h3></div>
+<div class="card"><i class="fas fa-shower"></i><h3>Kamar Mandi Dalam</h3></div>
+<div class="card"><i class="fas fa-shield-alt"></i><h3>Keamanan 24 Jam</h3></div>
+</div>
+</section>
+
+<section id="kamar" class="section reveal">
+<h2>Pilihan Kamar</h2>
+<div class="grid">
+<div class="card"><span class="badge">Favorit</span><h3>Standar</h3><p>Rp500.000 / bulan</p></div>
+<div class="card"><span class="badge">Best</span><h3>VIP</h3><p>Rp750.000 / bulan</p></div>
+<div class="card"><span class="badge">Premium</span><h3>Eksekutif</h3><p>Rp1.000.000 / bulan</p></div>
+</div>
+</section>
+
+<section id="galeri" class="section reveal">
+<h2>Galeri Kost</h2>
+<div class="slider">
+<div class="slider-track" id="slideTrack">
+<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-6-kamar-768x768.webp" alt="Kamar 1">
+<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-natural-alami-768x768.webp" alt="Kamar 2">
+<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg" alt="Kamar 3">
+</div>
+</div>
+</section>
+
+<section class="section reveal">
+<h2>FAQ</h2>
+<div class="card faq"><h3>Apakah bisa bulanan?</h3><p>Bisa, minimal 1 bulan.</p></div>
+<div class="card faq"><h3>Parkir tersedia?</h3><p>Tersedia parkir motor & mobil.</p></div>
+</section>
+
+<section id="booking" class="section reveal">
+<h2>Booking Online</h2>
+<form id="bookingForm">
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+<input type="tel" id="wa" placeholder="Nomor WhatsApp (contoh: 81234567890)" pattern="[0-9]{9,15}" required>
+<select id="kamarSelect" onchange="hitungHarga()">
+<option value="500000">Standar</option>
+<option value="750000">VIP</option>
+<option value="1000000">Eksekutif</option>
+</select>
+<select id="durasiSelect" onchange="hitungHarga()">
+<option value="1">1 Bulan</option>
+<option value="3">3 Bulan</option>
+<option value="6">6 Bulan</option>
+<option value="12">12 Bulan</option>
+</select>
+<p><strong>Total: <span id="total">Rp0</span></strong></p>
+<button type="submit" class="btn btn-main" style="width:100%">Kirim ke WhatsApp</button>
+</form>
+
+<div id="qrisContainer" class="reveal">
+<h3>Scan QRIS untuk bayar</h3>
+<img id="qrisImage" src="" alt="QRIS" style="max-width:200px;margin-top:10px;">
+</div>
+</section>
+
+<footer>© 2026 Kost AE Ketapang</footer>
+
+<a class="wa-float" href="#booking"><i class="fab fa-whatsapp"></i></a>
+<div class="dark-toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></div>
+<div class="top-toggle" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+const nav = document.getElementById("nav");
+const slideTrack = document.getElementById("slideTrack");
+const kamarSelect = document.getElementById("kamarSelect");
+const durasiSelect = document.getElementById("durasiSelect");
+const total = document.getElementById("total");
+const nama = document.getElementById("nama");
+const wa = document.getElementById("wa");
+const qrisImage = document.getElementById("qrisImage");
+let idx=0;
+
+// NAV SCROLL
+window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",scrollY>50);});
+
+// REVEAL
+document.querySelectorAll(".reveal").forEach(el=>{
+const obs=new IntersectionObserver(entries=>{
+if(entries[0].isIntersecting) el.classList.add("active");
+}); obs.observe(el);
+});
+
+// DARK MODE
+function toggleDark(){
+document.body.classList.toggle("dark");
+localStorage.setItem("dark",document.body.classList.contains("dark"));
+}
+if(localStorage.getItem("dark")==="true"){document.body.classList.add("dark");}
+
+// SLIDER
+setInterval(()=>{
+idx=(idx+1)%3;
+slideTrack.style.transform=`translateX(-${idx*100}%)`;
+},4000);
+
+// HARGA
+function hitungHarga(){
+const h = Number(kamarSelect.value);
+const d = Number(durasiSelect.value);
+const totalHarga = h*d;
+total.innerText = "Rp"+totalHarga.toLocaleString("id-ID");
+generateQRIS(totalHarga);
+}
+hitungHarga();
+
+// GENERATE QRIS
+function generateQRIS(amount){
+const qrisData = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Bayar Kost Rp${amount.toLocaleString("id-ID")}`;
+qrisImage.src = qrisData;
+}
+
+// FAQ
+document.querySelectorAll(".faq").forEach(f=>{
+f.addEventListener("click",()=>f.classList.toggle("open"));
+});
+
+// SCROLL TO TOP
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+// WHATSAPP BOOKING
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+e.preventDefault();
+const namaVal = nama.value.trim();
+const waVal = wa.value.trim();
+const kamarVal = kamarSelect.options[kamarSelect.selectedIndex].text;
+const durasiVal = durasiSelect.value;
+const totalVal = total.innerText;
+
+// Validasi WA
+const waRegex = /^[0-9]{9,15}$/;
+if(!waRegex.test(waVal)){
+  alert("Masukkan nomor WhatsApp yang valid tanpa + atau spasi.");
+  return;
+}
+
+// Format WA internasional
+const waLink = `https://wa.me/62${waVal.replace(/^0+/,'')}?text=` +
+encodeURIComponent(`Halo Kost AE,%0ANama: ${namaVal}%0ANo WA: ${waVal}%0AKamar: ${kamarVal}%0ADurasi: ${durasiVal} bulan%0ATotal: ${totalVal}`);
+window.open(waLink,"_blank");
+this.reset();
+hitungHarga();
+});
+</script>
+
+</body>
+</html>

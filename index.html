@@ -3,38 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kost AE Ketapang | Kost Premium Modern</title>
-<meta name="description" content="Kost Premium Ketapang AC, WiFi cepat, kamar mandi dalam, keamanan 24 jam. Booking via WhatsApp & QRIS.">
+<title>Kost Onic Ketapang | Kost Modern</title>
+<meta name="description" content="Kost Premium Ketapang AC, WiFi cepat, kamar mandi dalam, keamanan 24 jam. Booking via WhatsApp, QRIS, Transfer, Cash. Kamar tersedia & diskon spesial.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://upload.wikimedia.org/wikipedia/id/4/4f/Onic_Esports_Logo_%28SVG%29_-_Vector69Com.svg" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
---primary:#4f46e5;
---accent:#22c55e;
---dark:#020617;
---gray:#64748b;
---bg:#f8fafc;
+--primary:#4f46e5;--accent:#22c55e;--dark:#020617;--gray:#64748b;--bg:#f8fafc;--white:#ffffff;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;background:var(--bg);color:#1e293b;transition:0.3s;}
-body.dark{background:#020617;color:#e5e7eb;}
-body.dark nav, body.dark .card, body.dark form, body.dark footer{background:#111827;color:#e5e7eb;}
+body.dark{background:var(--dark);color:var(--white);}
+body.dark nav, body.dark .card, body.dark form, body.dark footer{background:#111827;color:var(--white);}
 
+/* Logo Styles yang Diperbaiki */
 nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);z-index:1000;height:70px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;transition:.3s;}
 nav.scrolled{box-shadow:0 20px 40px rgba(0,0,0,.2);}
+nav.dark{background:rgba(17,24,39,.95);}
 .navbar a{margin-left:25px;color:#334155;font-weight:500;text-decoration:none;}
+body.dark .navbar a{color:var(--white);}
 
-.hero{margin-top:70px;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+  padding:8px 16px;
+  border-radius:16px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.logo img {
+  height: 32px;
+  filter: drop-shadow(0 2px 8px rgba(79,70,229,0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.logo-text{
+  font-size:1.3rem;
+  font-weight:800;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #facc15, #22c55e, #4f46e5, #ec4899, #facc15, #22c55e);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite, glow 3s ease-in-out infinite alternate;
+  white-space: nowrap;
+  text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+  letter-spacing: -0.5px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+@keyframes glow {
+  0% { 
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.3));
+    transform: scale(1);
+  }
+  100% { 
+    filter: drop-shadow(0 0 15px rgba(250, 204, 21, 0.8));
+    transform: scale(1.02);
+  }
+}
+
+/* Dark mode logo */
+body.dark .logo-text {
+  background: linear-gradient(90deg, #fbbf24, #4ade80, #93c5fd, #f472b6, #fbbf24);
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.7);
+}
+
+.hero{margin-top:70px;background:linear-gradient(135deg,var(--primary),var(--accent));color:var(--white);}
 .hero-content{max-width:1200px;margin:auto;padding:120px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
 .hero h1{font-size:3.2rem;}
 .hero p{margin:20px 0;}
 .hero img{width:100%;border-radius:30px;box-shadow:0 40px 80px rgba(0,0,0,.4);}
 
 .btn{display:inline-block;padding:16px 32px;border-radius:20px;font-weight:600;transition:.3s;cursor:pointer;text-align:center;}
-.btn-main{background:white;color:var(--primary);}
+.btn-main{background:var(--white);color:var(--primary);}
 .btn-main:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(0,0,0,.4);}
 
 .section{padding:100px 20px;max-width:1200px;margin:auto;}
@@ -42,60 +103,102 @@ nav.scrolled{box-shadow:0 20px 40px rgba(0,0,0,.2);}
 .section p.desc{text-align:center;max-width:650px;margin:0 auto 60px;color:var(--gray);}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
-.card{background:white;padding:34px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.1);transition:.35s;position:relative;cursor:pointer;}
+.card{background:var(--white);padding:34px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.1);transition:.35s;position:relative;cursor:pointer;}
+body.dark .card{background:#1f2937;box-shadow:0 20px 50px rgba(0,0,0,.5);}
 .card:hover{transform:translateY(-10px);box-shadow:0 40px 80px rgba(0,0,0,.18);}
 .card i{font-size:2.3rem;color:var(--accent);margin-bottom:15px;}
+.card.available .badge{background:var(--accent);color:var(--white);}
+.card.unavailable .badge{background:#ef4444;color:var(--white);}
 
-.badge{position:absolute;top:20px;right:20px;background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:.8rem;}
+.badge{position:absolute;top:20px;right:20px;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600;}
 
 .slider{overflow:hidden;border-radius:28px;}
 .slider-track{display:flex;transition:0.5s;}
 .slider img{min-width:100%;height:260px;object-fit:cover;}
 
-form{max-width:480px;margin:auto;background:white;padding:40px;border-radius:30px;box-shadow:0 30px 70px rgba(0,0,0,.15);}
-input,select,button{width:100%;padding:15px;margin-bottom:16px;border-radius:14px;border:1px solid #cbd5e1;font-family:inherit;}
-button{border:none;}
+form{max-width:480px;margin:auto;background:var(--white);padding:40px;border-radius:30px;box-shadow:0 30px 70px rgba(0,0,0,.15);}
+body.dark form{background:#1f2937;}
+input,select,button,textarea{width:100%;padding:15px;margin-bottom:16px;border-radius:14px;border:1px solid #cbd5e1;font-family:inherit;background:var(--white);color:#1e293b;}
+body.dark input, body.dark select, body.dark textarea{background:#374151;color:var(--white);border-color:#4b5563;}
+button{border:none;background:var(--primary);color:var(--white);}
 
 .faq p{display:none;margin-top:10px;}
 .faq.open p{display:block;}
 
-footer{background:#020617;color:#94a3b8;text-align:center;padding:50px 20px;}
+footer{background:var(--dark);color:#94a3b8;text-align:center;padding:50px 20px;}
 
-.wa-float,.dark-toggle,.top-toggle{position:fixed;right:30px;border-radius:50%;color:white;font-size:1.6rem;z-index:999;box-shadow:0 20px 50px rgba(0,0,0,.4);padding:18px;cursor:pointer;}
+.wa-float,.dark-toggle,.top-toggle{position:fixed;right:30px;border-radius:50%;color:var(--white);font-size:1.6rem;z-index:999;box-shadow:0 20px 50px rgba(0,0,0,.4);padding:18px;cursor:pointer;transition:.3s;}
 .wa-float{bottom:30px;background:#25D366;}
 .dark-toggle{bottom:100px;background:#0f172a;}
-.top-toggle{bottom:170px;background:var(--primary);}
+.dark-toggle:hover{background:#1e293b;}
+.top-toggle{bottom:170px;background:var(--primary);display:none;}
+.top-toggle:hover{background:#3730a3;}
+.top-toggle.show{display:block;}
 
-#qrisContainer{max-width:300px;margin:20px auto;text-align:center;}
+#qrisContainer{max-width:300px;margin:20px auto;text-align:center;display:none;}
+#qrisContainer.show{display:block;}
+#stars span{font-size:2rem;color:#facc15;cursor:pointer;}
+body.dark #stars span{color:#fbbf24;}
+
+#promoPopup{position:fixed;bottom:30px;left:30px;max-width:300px;z-index:999;display:none;background:var(--accent);color:var(--white);padding:20px;border-radius:20px;}
+body.dark #promoPopup{background:#059669;}
+#toast{position:fixed;bottom:30px;right:30px;background:var(--dark);color:var(--white);padding:15px 20px;border-radius:15px;display:none;z-index:999;}
 
 .reveal{opacity:0;transform:translateY(40px);transition:1s;}
 .reveal.active{opacity:1;transform:none;}
 
-@media(max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center}.hero h1{font-size:2.3rem;}}
+@media(max-width:768px){
+  .hero-content{grid-template-columns:1fr;text-align:center;}
+  .hero h1{font-size:2.3rem;}
+  .wa-float,.dark-toggle,.top-toggle{right:15px;padding:15px;font-size:1.4rem;}
+  .dark-toggle{bottom:90px;}
+  .top-toggle{bottom:155px;}
+  
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  
+  body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8fafc;
+  }
+
+  nav{
+    height:70px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    background:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+  }
+}
 </style>
 </head>
 <body>
 
 <nav id="nav">
+<div class="logo" onclick="scrollToTop()">
+  <img src="https://upload.wikimedia.org/wikipedia/id/4/4f/Onic_Esports_Logo_%28SVG%29_-_Vector69Com.svg" 
+       alt="ONIC Logo">
+  <span class="logo-text">Kost Onic</span>
+</div>
 <div class="navbar">
-<div class="logo"><i class="fas fa-building"></i> Kost AE</div>
-<div>
 <a href="#fasilitas">Fasilitas</a>
 <a href="#kamar">Kamar</a>
 <a href="#galeri">Galeri</a>
 <a href="#booking">Booking</a>
-</div>
 </div>
 </nav>
 
 <section class="hero reveal">
 <div class="hero-content">
 <div>
-<h1>Kost Premium Ketapang</h1>
-<p>Hunian modern, nyaman, dan aman untuk mahasiswa & pekerja.</p>
+<h1>Kost Onic ID🇮🇩</h1>
+<p>Hunian modern, nyaman, dan aman untuk mahasiswa & pekerja. Kamar tersedia dengan diskon spesial!</p>
 <a href="#booking" class="btn btn-main"><i class="fab fa-whatsapp"></i> Booking Sekarang</a>
 </div>
-<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg" alt="Kost AE">
+<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg" alt="Kost Onic">
 </div>
 </section>
 
@@ -110,145 +213,362 @@ footer{background:#020617;color:#94a3b8;text-align:center;padding:50px 20px;}
 </section>
 
 <section id="kamar" class="section reveal">
-<h2>Pilihan Kamar</h2>
-<div class="grid">
-<div class="card"><span class="badge">Favorit</span><h3>Standar</h3><p>Rp500.000 / bulan</p></div>
-<div class="card"><span class="badge">Best</span><h3>VIP</h3><p>Rp750.000 / bulan</p></div>
-<div class="card"><span class="badge">Premium</span><h3>Eksekutif</h3><p>Rp1.000.000 / bulan</p></div>
+<h2>Pilihan Kamar Tersedia</h2>
+<p class="desc">Cek ruang kamar kosong sekarang. Diskon otomatis untuk sewa panjang!</p>
+<div class="grid" id="kamarGrid">
+<!-- Di-generate oleh JS -->
 </div>
+</section>
+
+<section class="section reveal" id="rating">
+<h2>Rating & Review</h2>
+<div class="card">
+<div id="stars"></div>
+<p id="ratingText"></p>
+<input id="reviewName" placeholder="Nama">
+<textarea id="reviewText" placeholder="Tulis review"></textarea>
+<button onclick="addReview()" class="btn btn-main">Kirim Review</button>
+</div>
+<div id="reviewList"></div>
 </section>
 
 <section id="galeri" class="section reveal">
 <h2>Galeri Kost</h2>
 <div class="slider">
 <div class="slider-track" id="slideTrack">
-<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-6-kamar-768x768.webp" alt="Kamar 1">
-<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-natural-alami-768x768.webp" alt="Kamar 2">
-<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg" alt="Kamar 3">
+<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-6-kamar-768x768.webp">
+<img src="https://mitrabangun.id/wp-content/uploads/2023/11/rumah-kost-natural-alami-768x768.webp">
+<img src="https://www.sewakost.com/files/08-2022/ad90449/kost-nyaman-di-kota-medan-125573880_large.jpg">
 </div>
 </div>
-</section>
-
-<section class="section reveal">
-<h2>FAQ</h2>
-<div class="card faq"><h3>Apakah bisa bulanan?</h3><p>Bisa, minimal 1 bulan.</p></div>
-<div class="card faq"><h3>Parkir tersedia?</h3><p>Tersedia parkir motor & mobil.</p></div>
 </section>
 
 <section id="booking" class="section reveal">
 <h2>Booking Online</h2>
 <form id="bookingForm">
 <input type="text" id="nama" placeholder="Nama Lengkap" required>
-<input type="tel" id="wa" placeholder="Nomor WhatsApp (contoh: 81234567890)" pattern="[0-9]{9,15}" required>
+<input type="tel" id="wa" placeholder="Nomor WhatsApp (08xx)" required>
 <select id="kamarSelect" onchange="hitungHarga()">
-<option value="500000">Standar</option>
-<option value="750000">VIP</option>
-<option value="1000000">Eksekutif</option>
+<!-- Di-generate oleh JS -->
 </select>
 <select id="durasiSelect" onchange="hitungHarga()">
 <option value="1">1 Bulan</option>
-<option value="3">3 Bulan</option>
-<option value="6">6 Bulan</option>
-<option value="12">12 Bulan</option>
+<option value="3">3 Bulan (Diskon 10%)</option>
+<option value="6">6 Bulan (Diskon 15%)</option>
+<option value="12">12 Bulan (Diskon 20%)</option>
 </select>
-<p><strong>Total: <span id="total">Rp0</span></strong></p>
-<button type="submit" class="btn btn-main" style="width:100%">Kirim ke WhatsApp</button>
+<select id="paymentSelect" onchange="toggleQRIS()">
+<option value="transfer">Transfer Bank</option>
+<option value="qris">QRIS via WA</option>
+<option value="cash">Cash / Datang Langsung</option>
+</select>
+<p><b>Total: <span id="total">Rp0</span> <span id="diskonInfo"></span></b></p>
+<button type="submit" class="btn btn-main">Kirim ke WhatsApp</button>
 </form>
-
-<div id="qrisContainer" class="reveal">
-<h3>Scan QRIS untuk bayar</h3>
-<img id="qrisImage" src="" alt="QRIS" style="max-width:200px;margin-top:10px;">
+<div id="qrisContainer">
+<h3>Scan QRIS atau Kirim ke WA</h3>
+<img id="qrisImage" alt="QRIS Payment">
+<p>Klik kanan simpan & bayar via e-wallet/banking, lalu kirim bukti ke WA.</p>
 </div>
 </section>
 
-<footer>© 2026 Kost AE Ketapang</footer>
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h4>Kost Onic ID</h4>
+<p>Kost premium dengan fasilitas lengkap di lokasi strategis.</p>
+<div style="margin-top:1rem;">
+<a href="#"><i class="fab fa-whatsapp" style="color:var(--accent);margin-right:.5rem;"></i>+62 858-2000-1352</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Fasilitas</h4>
+<a href="#fasilitas">AC & WiFi</a>
+<a href="#kamar">Kamar Premium</a>
+<a href="#galeri">Galeri</a>
+</div>
+<div class="footer-section">
+<h4>Jam Operasional</h4>
+<p><strong>Senin-Minggu:</strong> 08.00 - 22.00 WIB</p>
+<p>Booking 24 jam via WhatsApp</p>
+</div>
+<div class="footer-section">
+<h4>Hubungi Kami</h4>
+<p><i class="fas fa-map-marker-alt"></i> Ketapang, Kalbar</p>
+<p><i class="fas fa-phone"></i> 0858-2000-1352</p>
+<p><i class="fas fa-envelope"></i> kostonic@gmail.com</p>
+</div>
+</div>
+<div style="border-top:1px solid #374151;padding-top:2rem;">
+<p>&copy; 2026 Kost Onic ID. Kamar tersedia terupdate <strong>real-time</strong>.</p>
+</div>
+</footer>
 
-<a class="wa-float" href="#booking"><i class="fab fa-whatsapp"></i></a>
-<div class="dark-toggle" onclick="toggleDark()"><i class="fas fa-moon"></i></div>
-<div class="top-toggle" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+<!-- Floating Buttons -->
+<a class="wa-float" href="https://wa.me/6285820001352" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<div class="dark-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></div>
+<div class="top-toggle" onclick="scrollToTop()" id="topBtn"><i class="fas fa-arrow-up"></i></div>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<div id="promoPopup">
+<h4>🎉 Promo Spesial!</h4>
+<p>Diskon hingga 20% untuk sewa 3 bulan+. <strong>Ruang kamar kosong: <span id="unitCount">9</span> unit!</strong></p>
+<p id="countdown"></p>
+<button onclick="document.getElementById('promoPopup').style.display='none'" style="background:var(--white);color:var(--accent);border:none;padding:10px;border-radius:10px;">Tutup</button>
+</div>
+
+<div id="toast">Notifikasi</div>
+
 <script>
-const nav = document.getElementById("nav");
-const slideTrack = document.getElementById("slideTrack");
-const kamarSelect = document.getElementById("kamarSelect");
-const durasiSelect = document.getElementById("durasiSelect");
-const total = document.getElementById("total");
-const nama = document.getElementById("nama");
-const wa = document.getElementById("wa");
-const qrisImage = document.getElementById("qrisImage");
+const nav=document.getElementById("nav");
+const slideTrack=document.getElementById("slideTrack");
+const topBtn=document.getElementById("topBtn");
 let idx=0;
 
-// NAV SCROLL
-window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",scrollY>50);});
+// Dark Mode Toggle [web:11]
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+  const icon = document.querySelector('.dark-toggle i');
+  icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+}
 
-// REVEAL
+// Load Dark Mode dari localStorage [web:11]
+const darkMode = localStorage.getItem('darkMode');
+if (darkMode === 'enabled') {
+  document.body.classList.add('dark');
+  document.querySelector('.dark-toggle i').className = 'fas fa-sun';
+}
+
+// Scroll to Top Button [web:12]
+function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+  topBtn.classList.toggle('show', window.scrollY > 300);
+});
+
+// Data kamar dengan jumlah unit (tersimpan di localStorage)
+function getKamarData() {
+  return JSON.parse(localStorage.getItem("kamars") || JSON.stringify([
+    {nama: 'Standar A', harga: 500000, tersedia: 2, totalUnit: 2},
+    {nama: 'VIP B', harga: 750000, tersedia: 3, totalUnit: 3},
+    {nama: 'Eksekutif C', harga: 1000000, tersedia: 0, totalUnit: 2},
+    {nama: 'Standar D', harga: 500000, tersedia: 1, totalUnit: 1},
+    {nama: 'VIP E', harga: 750000, tersedia: 2, totalUnit: 2},
+    {nama: 'Eksekutif F', harga: 1000000, tersedia: 1, totalUnit: 1}
+  ]));
+}
+
+// Simpan data kamar ke localStorage
+function saveKamarData(kamars) {
+  localStorage.setItem("kamars", JSON.stringify(kamars));
+}
+
+// Render kamar dengan jumlah unit
+function renderKamar() {
+  const grid = document.getElementById('kamarGrid');
+  const kamars = getKamarData();
+  grid.innerHTML = '';
+  
+  kamars.forEach((kamar, i) => {
+    const status = kamar.tersedia > 0 ? 'available' : 'unavailable';
+    const card = document.createElement('div');
+    card.className = `card ${status}`;
+    card.innerHTML = `
+      <span class="badge">${kamar.tersedia > 0 ? `${kamar.tersedia} Unit Tersedia` : 'Penuh'}</span>
+      <h3>${kamar.nama}</h3>
+      <p>Rp${kamar.harga.toLocaleString('id-ID')} / bulan</p>
+      <p><small><strong>${kamar.tersedia}/${kamar.totalUnit} Unit</strong></small></p>
+    `;
+    grid.appendChild(card);
+  });
+  
+  // Update popup promo
+  updatePromo();
+}
+
+// Kurangi unit kamar saat booking
+function bookKamar(kamarNama) {
+  const kamars = getKamarData();
+  const kamar = kamars.find(k => k.nama === kamarNama);
+  if (kamar && kamar.tersedia > 0) {
+    kamar.tersedia--;
+    saveKamarData(kamars);
+    renderKamar();
+    toast(`✅ ${kamarNama} dipesan! Sisa ${kamar.tersedia} unit`);
+    return true;
+  }
+  return false;
+}
+
+// Update kamar select berdasarkan availability real-time
+function updateKamarSelect() {
+  const kamars = getKamarData();
+  const select = document.getElementById('kamarSelect');
+  select.innerHTML = '';
+  
+  kamars.forEach(kamar => {
+    if (kamar.tersedia > 0) {
+      const option = document.createElement('option');
+      option.value = `${kamar.harga}|${kamar.nama}`;
+      option.textContent = `${kamar.nama} - Rp${kamar.harga.toLocaleString('id-ID')} / bulan (${kamar.tersedia} unit tersedia)`;
+      select.appendChild(option);
+    }
+  });
+  
+  if (select.children.length === 0) {
+    select.innerHTML = '<option value="">Tidak ada kamar tersedia</option>';
+  }
+}
+
+// Reveal
 document.querySelectorAll(".reveal").forEach(el=>{
-const obs=new IntersectionObserver(entries=>{
-if(entries[0].isIntersecting) el.classList.add("active");
-}); obs.observe(el);
+ new IntersectionObserver(e=>e[0].isIntersecting&&el.classList.add("active")).observe(el);
 });
 
-// DARK MODE
-function toggleDark(){
-document.body.classList.toggle("dark");
-localStorage.setItem("dark",document.body.classList.contains("dark"));
-}
-if(localStorage.getItem("dark")==="true"){document.body.classList.add("dark");}
+// Slider
+setInterval(()=>{idx=(idx+1)%3;slideTrack.style.transform=`translateX(-${idx*100}%)`;},4000);
 
-// SLIDER
-setInterval(()=>{
-idx=(idx+1)%3;
-slideTrack.style.transform=`translateX(-${idx*100}%)`;
-},4000);
-
-// HARGA
+// Harga dengan diskon
 function hitungHarga(){
-const h = Number(kamarSelect.value);
-const d = Number(durasiSelect.value);
-const totalHarga = h*d;
-total.innerText = "Rp"+totalHarga.toLocaleString("id-ID");
-generateQRIS(totalHarga);
+  const kamarSelect = document.getElementById('kamarSelect');
+  const durasiSelect = document.getElementById('durasiSelect');
+  const total = document.getElementById('total');
+  const diskonInfo = document.getElementById('diskonInfo');
+  
+  if (kamarSelect.value === '') {
+    total.innerText = 'Rp0';
+    return;
+  }
+  
+  const [h, tipe] = kamarSelect.value.split('|');
+  const d = +durasiSelect.value;
+  let diskon = 0;
+  if (d >= 12) diskon = 0.20;
+  else if (d >= 6) diskon = 0.15;
+  else if (d >= 3) diskon = 0.10;
+  
+  const totalHarga = Math.round(h * d * (1 - diskon));
+  total.innerText = 'Rp' + totalHarga.toLocaleString('id-ID');
+  diskonInfo.innerText = diskon > 0 ? `(Diskon ${Math.round(diskon * 100)}%)` : '';
+  
+  // Update QRIS
+  const nama = document.getElementById('nama').value;
+  document.getElementById('qrisImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Bayar+Rp${totalHarga}+ke+Kost+Onic+Ketapang+-+Norek:+082254237422+(Dana)+-+Nama:${nama || 'Customer'}`;
 }
-hitungHarga();
 
-// GENERATE QRIS
-function generateQRIS(amount){
-const qrisData = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Bayar Kost Rp${amount.toLocaleString("id-ID")}`;
-qrisImage.src = qrisData;
+// Toggle QRIS
+function toggleQRIS() {
+  const payment = document.getElementById('paymentSelect').value;
+  const qrisCont = document.getElementById('qrisContainer');
+  qrisCont.classList.toggle('show', payment === 'qris');
 }
 
-// FAQ
-document.querySelectorAll(".faq").forEach(f=>{
-f.addEventListener("click",()=>f.classList.toggle("open"));
+// Booking form submit - sekarang kurangi unit kamar!
+document.getElementById('bookingForm').addEventListener("submit", e => {
+  e.preventDefault();
+  
+  const kamarSelect = document.getElementById('kamarSelect');
+  if (kamarSelect.value === '' || kamarSelect.value === 'Tidak ada kamar tersedia') {
+    toast('❌ Tidak ada kamar tersedia!');
+    return;
+  }
+  
+  const nama = document.getElementById('nama').value;
+  const wa = document.getElementById('wa').value;
+  const payment = document.getElementById('paymentSelect').options[document.getElementById('paymentSelect').selectedIndex].text;
+  const [h, tipeKamar] = kamarSelect.value.split('|');
+  const d = document.getElementById('durasiSelect').value;
+  const totalHarga = document.getElementById('total').innerText;
+  
+  // Kurangi unit kamar
+  const booked = bookKamar(tipeKamar);
+  if (booked) {
+    updateKamarSelect(); // Update dropdown
+    
+    const pesan = `Halo Kost Onic%0A%0ANama: ${nama}%0AWa: ${wa}%0AKamar: ${tipeKamar} ✅ DI-BOOK%0ADurasi: ${d} Bulan%0AMetode Bayar: ${payment}%0ATotal: ${totalHarga}%0A%0ATerima kasih telah booking!`;
+    const link = `https://wa.me/6285820001352?text=${pesan}`;
+    window.open(link, "_blank");
+    
+    // Reset form
+    document.getElementById('bookingForm').reset();
+    hitungHarga();
+    toast('🎉 Booking berhasil! Unit kamar berkurang otomatis.');
+  } else {
+    toast('❌ Kamar sudah penuh!');
+  }
 });
 
-// SCROLL TO TOP
-function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+// Rating system
+let rating=localStorage.getItem("rating")||0;
+const stars = document.getElementById('stars');
+const ratingText = document.getElementById('ratingText');
 
-// WHATSAPP BOOKING
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-e.preventDefault();
-const namaVal = nama.value.trim();
-const waVal = wa.value.trim();
-const kamarVal = kamarSelect.options[kamarSelect.selectedIndex].text;
-const durasiVal = durasiSelect.value;
-const totalVal = total.innerText;
+function renderStars(){
+  stars.innerHTML="";
+  for(let i=1;i<=5;i++){
+   let s=document.createElement("span");
+   s.innerText=i<=rating?"★":"☆";
+   s.onclick=()=>{rating=i;localStorage.setItem("rating",i);renderStars();toast("Terima kasih ⭐");};
+   stars.appendChild(s);
+  }
+  ratingText.innerText=rating?`Rating: ${rating}/5`:"Belum ada rating";
+}
+renderStars();
 
-// Validasi WA
-const waRegex = /^[0-9]{9,15}$/;
-if(!waRegex.test(waVal)){
-  alert("Masukkan nomor WhatsApp yang valid tanpa + atau spasi.");
-  return;
+// Review system
+function addReview(){
+ const reviewName = document.getElementById('reviewName');
+ const reviewText = document.getElementById('reviewText');
+ if(!reviewName.value||!reviewText.value) return alert("Lengkapi data");
+ 
+ const reviews=JSON.parse(localStorage.getItem("reviews")||"[]");
+ reviews.push({n:reviewName.value,t:reviewText.value});
+ localStorage.setItem("reviews",JSON.stringify(reviews));
+ reviewName.value="";reviewText.value="";
+ loadReviews();toast("Review terkirim ✅");
+}
+function loadReviews(){
+ const reviewList = document.getElementById('reviewList');
+ reviewList.innerHTML="";
+ JSON.parse(localStorage.getItem("reviews")||"[]").forEach(r=>{
+  const div=document.createElement("div");
+  div.className="card";
+  div.innerHTML=`<b>${r.n}</b><p>${r.t}</p>`;
+  reviewList.appendChild(div);
+ });
+}
+loadReviews();
+
+// Update promo popup dengan jumlah real-time
+function updatePromo() {
+  const kamars = getKamarData();
+  const totalTersedia = kamars.reduce((sum, k) => sum + k.tersedia, 0);
+  document.getElementById('unitCount').innerText = totalTersedia;
 }
 
-// Format WA internasional
-const waLink = `https://wa.me/62${waVal.replace(/^0+/,'')}?text=` +
-encodeURIComponent(`Halo Kost AE,%0ANama: ${namaVal}%0ANo WA: ${waVal}%0AKamar: ${kamarVal}%0ADurasi: ${durasiVal} bulan%0ATotal: ${totalVal}`);
-window.open(waLink,"_blank");
-this.reset();
+let end=Date.now()+86400000;
+setInterval(()=> {
+  const kamars = getKamarData();
+  const totalTersedia = kamars.reduce((sum, k) => sum + k.tersedia, 0);
+  document.getElementById('countdown').innerText=`Kamar Tersedia: ${totalTersedia} unit | Berakhir dalam ${Math.max(0,Math.floor((end-Date.now())/1000))} detik`;
+},1000);
+
+// Toast notification
+function toast(msg){
+  const toastDiv=document.getElementById("toast");
+  toastDiv.innerText=msg;toastDiv.style.display="block";
+  setTimeout(()=>toastDiv.style.display="none",4000);
+}
+
+// Initialize
+renderKamar();
+updateKamarSelect();
 hitungHarga();
-});
+setTimeout(()=>document.getElementById('promoPopup').style.display="block",4000);
 </script>
 
 </body>
